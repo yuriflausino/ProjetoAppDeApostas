@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:tds_aplicativo_futebol/main.dart';
-// Importe a tela SoccerApp ou o arquivo que a contenha
 
 class SportSelectionPage extends StatelessWidget {
   @override
@@ -12,17 +11,21 @@ class SportSelectionPage extends StatelessWidget {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          ElevatedButton(
-            onPressed: () {
-              // Ao clicar em "Futebol", navegue para a tela SoccerApp
+          InkWell(
+            onTap: () {
+              // Ao clicar na imagem, navegue para a tela SoccerApp
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) => SoccerApp()),
               );
             },
-            child: Text('Futebol'),
+            child: Image.asset(
+              'assets/images/brasileirao.png', // Caminho para a sua imagem
+              width: 150, // Ajuste conforme necessário
+              height: 150, // Ajuste conforme necessário
+            ),
           ),
-          // Adicione mais botões para outros esportes, se necessário
+          // Adicione mais imagens ou botões para outros esportes, se necessário
         ],
       ),
     );
